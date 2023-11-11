@@ -1,25 +1,26 @@
-const MenuCover = () => {
+import { Parallax } from 'react-parallax';
+
+
+const MenuCover = ({ img, title,subTitle }) => {
   return (
-    <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage:
-          "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-      }}
+    <Parallax
+      blur={{ min: -50, max: 50 }}
+      bgImage={img}
+      bgImageAlt="the dog"
+      strength={-200}
     >
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          <button className="btn btn-primary">Get Started</button>
+      <div className="hero h-[550px]">
+        <div className="hero-overlay w-3/4 h-80   bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="">
+            <h1 className="mb-5 text-5xl  text-white font-serif uppercase">{title}</h1>
+            <p className="mb-5 text-white">
+             {subTitle}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </Parallax>
   );
 };
 
